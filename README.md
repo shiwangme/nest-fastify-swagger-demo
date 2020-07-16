@@ -1,6 +1,6 @@
 # Nest.js Demo with Fastify and Swagger
 
-教程文档链接： <https://leader.js.cool/#/basic/framework/nuxt>
+教程文档链接： <https://leader.js.cool/#/basic/framework/nest>
 
 ## 安装
 

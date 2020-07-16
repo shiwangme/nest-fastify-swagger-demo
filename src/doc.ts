@@ -1,3 +1,6 @@
+import { resolve } from 'path';
+import { writeFileSync } from 'fs';
+
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
@@ -14,10 +17,6 @@ async function bootstrap() {
     .build();
   // 生成的 JSON 格式文档，可以导出静态化
   const document = SwaggerModule.createDocument(app, options);
-  // 注入, 访问 http://localhost:3000/api 可以访问
-  SwaggerModule.setup('api', app, document);
-
-  await app.listen(3000);
-  console.log(`Application is running on: ${await app.getUrl()}`);
+  writeFileSync(resolve(__dirname, '../api.json'), JSON.stringify(document, null, 2), { encoding: 'utf8' });
 }
 bootstrap();
