@@ -21,6 +21,12 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+生成自动文档：
+
+```bash
+npx compodoc -p tsconfig.json -s
+```
+
 ## 测试
 
 ```bash
